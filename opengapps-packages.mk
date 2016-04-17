@@ -25,8 +25,7 @@ PRODUCT_PACKAGES += FaceLock \
 ifneq ($(filter $(TARGET_GAPPS_VARIANT),micro),) # require at least micro
 PRODUCT_PACKAGES += CalendarGooglePrebuilt \
                     PrebuiltExchange3Google \
-                    PrebuiltGmail \
-                    GoogleHome
+                    PrebuiltGmail 
                     
 ifeq ($(filter $(call get-allowed-api-levels),23),)
 PRODUCT_PACKAGES += GoogleTTS
@@ -35,36 +34,32 @@ endif
 ifneq ($(filter $(TARGET_GAPPS_VARIANT),mini),) # require at least mini
 PRODUCT_PACKAGES += CalculatorGoogle \
                     PrebuiltDeskClockGoogle \
-                    PlusOne \
-                    Hangouts \
-                    Maps \
-                    Photos \
-                    YouTube
+                    Maps 
+                    
+                   
 
 ifneq ($(filter $(TARGET_GAPPS_VARIANT),full),) # require at least full
-PRODUCT_PACKAGES += Books \
-                    Chrome \
+PRODUCT_PACKAGES += Chrome \
                     CloudPrint2 \
-                    EditorsDocs \
-                    Drive \
                     GoogleEars \
-                    FitnessPrebuilt \
-                    PrebuiltKeep \
                     Videos \
-                    Music2 \
-                    Newsstand \
-                    PrebuiltNewsWeather \
                     PlayGames \
-                    EditorsSheets \
-                    EditorsSlides \
-                    talkback
+                    Maps \
+										YouTube \
+                    talkback \
+                    TranslatePrebuilt \
+                    TagGoogle \
+                    WebViewGoogle \
+                    FaceLock \
+                    PrebuiltDeskClockGoogle \
+                    CalendarGooglePrebuilt \
+                    PrebuiltGmail 
 
 ifneq ($(filter $(TARGET_GAPPS_VARIANT),stock),) # require at least stock
 
 DEVICE_PACKAGE_OVERLAYS += $(GAPPS_DEVICE_FILES_PATH)/overlay/stock
 
-PRODUCT_PACKAGES += GoogleCamera \
-                    GoogleContacts \
+PRODUCT_PACKAGES += GoogleContacts \
                     LatinImeGoogle \
                     PrebuiltBugle \
                     TagGoogle \
@@ -86,7 +81,6 @@ PRODUCT_PACKAGES += Wallet \
                     GooglePinyinIME \
                     Tycho \
                     Street \
-                    TranslatePrebuilt \
                     GoogleZhuyinIME
 
 endif # end super
